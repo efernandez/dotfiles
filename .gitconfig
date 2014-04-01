@@ -1,0 +1,33 @@
+[alias]
+    st = status
+    ci = commit
+
+    co = checkout
+    br = branch
+
+    unstage = reset HEAD --
+    last = log -1 HEAD
+
+    undo = reset --soft HEAD^
+    meld = !~/lib/git-meld/git-meld.pl
+
+[color]
+    ui = auto
+
+[user]
+    name = enriquefernandez
+    email = enrique.fernandez@pal-robotics.com
+
+[diff]
+    tool = meld
+    guitool = meld
+
+[difftool]
+    prompt = false
+
+[core]
+    excludesfile = ~/.gitignore_global
+    editor = vim
+
+[credential]
+    helper = cache --timeout=300
