@@ -429,15 +429,16 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-function run_once(cmd)
-  findme = cmd
-  firstspace = cmd:find(" ")
-  if firstspace then
-    findme = cmd:sub(0, firstspace-1)
-  end
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
-end
+do
+    local cmds =
+    {
+        "eval `ssh-agent -s`",
+        "synapse -s",
+        "dropbox start",
+        "skype"
+    }
 
-run_once("synapse -s")
-run_once("dropbox start")
--- run_once("skype")
+    for _,i in pairs(cmds) do
+        awful.util.spawn(i)
+    end
+end
