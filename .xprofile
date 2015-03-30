@@ -1,0 +1,10 @@
+#setxkbmap -layout es
+setxkbmap -layout en
+xset r rate 300 30
+numlockx
+synapse -s &
+xscreensaver -no-splash &
+dropbox start &
+skype &
+eval $(gnome-keyring-daemon --start) &
+eval $(ssh-agent -s) &
