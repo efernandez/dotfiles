@@ -1,6 +1,10 @@
 [alias]
+    gl  = log -10 --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
+    gll = log     --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
+
     st = status
     ci = commit
+    cia = commit --amend
 
     co = checkout
     br = branch
@@ -15,8 +19,8 @@
     ui = auto
 
 [user]
-    name = enriquefernandez
-    email = enrique.fernandez@pal-robotics.com
+    name = Enrique Fernandez
+    email = efernandez@clearpathrobotics.com
 
 [diff]
     tool = meld
@@ -31,3 +35,6 @@
 
 [credential]
     helper = cache --timeout=300
+
+[push]
+    default = current
