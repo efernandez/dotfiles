@@ -131,3 +131,9 @@ fi
 shopt -s autocd
 
 . /opt/ros/hydro/setup.bash
+
+#eval `ssh-agent -s`
+added_keys=`ssh-add -l`
+if [ ! $(echo $added_keys | grep -o -e bitbucket) ]; then
+   ssh-add "$HOME/.ssh/id_rsa_bitbucket"
+fi
