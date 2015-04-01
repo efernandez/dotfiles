@@ -437,6 +437,7 @@ do
         "dropbox start",
         "skype",
         "nm-applet"
+        "show_battery_status"
     }
 
     for _,i in pairs(cmds) do
