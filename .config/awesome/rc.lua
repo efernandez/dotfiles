@@ -435,7 +435,8 @@ do
         "eval `ssh-agent -s`",
         "synapse -s",
         "dropbox start",
-        "skype"
+        "skype",
+        "nm-applet"
     }
 
     for _,i in pairs(cmds) do
