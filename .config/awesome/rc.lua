@@ -436,7 +436,7 @@ do
         "synapse -s",
         "dropbox start",
         "skype",
-        "nm-applet"
+        "nm-applet",
         "show_battery_status"
     }
 
