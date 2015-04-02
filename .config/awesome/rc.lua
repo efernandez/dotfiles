@@ -437,7 +437,8 @@ do
         "dropbox start",
         "skype",
         "nm-applet",
-        "bluetooth-applet"
+        "bluetooth-applet",
+        "xfce4-power-manager"
     }
 
     for _,i in pairs(cmds) do
