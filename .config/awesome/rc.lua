@@ -436,7 +436,8 @@ do
         "synapse -s",
         "dropbox start",
         "skype",
-        "nm-applet"
+        "nm-applet",
+        "bluetooth-applet"
     }
 
     for _,i in pairs(cmds) do
