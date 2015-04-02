@@ -436,8 +436,7 @@ do
         "synapse -s",
         "dropbox start",
         "skype",
-        "nm-applet",
-        "show_battery_status"
+        "nm-applet"
     }
 
     for _,i in pairs(cmds) do

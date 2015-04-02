@@ -1,0 +1,6 @@
+Use install_xfce4_power_manager.sh first.
+Then configure the 'Power' settings.
+
+If it doesn't work, use install.sh, for the add hoc indicator.
+Then add "show_battery_status" to the rc.lua
+
