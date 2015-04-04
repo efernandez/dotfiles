@@ -20,3 +20,7 @@ sudo adduser efernandez netdev
 #/etc/dbus-1/system.d/nm-applet.conf
 #/etc/dbus-1/system.d/nm-avahi-autoipd.conf
 #/etc/dbus-1/system.d/nm-dhcp-client.conf
+
+# gnome-terminal Default profile settings
+cp .gconf/apps/gnome-terminal/profiles/Default/%gconf.xml $HOME/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml
+
