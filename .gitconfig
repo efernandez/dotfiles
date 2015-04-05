@@ -4,7 +4,7 @@
 
     st = status
     ci = commit
-    cia = commit --amend
+    cia = commit --amend --no-edit
 
     co = checkout
     br = branch
