@@ -48,6 +48,21 @@ function ws(){
   fi
 }
 
+function release(){
+  if [[ $# < 1 ]]
+  then
+    ROS_DISTRO=`git br | grep '*' | awk '{print $2}' | cut -d'-' -f 1`
+  else
+    ROS_DISTRO=$1
+  fi
+
+  catkin_generate_changelog
+  git ci -am "Update changelog"
+  git push
+  catkin_prepare_release
+  bloom-release -y `basename `pwd`` --track $ROS_DISTRO --rosdistro $ROS_DISTRO
+}
+
 function cm(){
   WS_DIR=($(echo $CMAKE_PREFIX_PATH | tr ':' '\n'))
   WS_DIR=${WS_DIR[0]}
