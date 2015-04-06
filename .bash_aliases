@@ -67,6 +67,8 @@ function cm(){
   cd -
 }
 
+alias psgrep='ps aux | grep '
+
 roskill() {
   killall gazebo gzclient
   psgrep ros | grep -v vim | grep -v sublime | grep -v 'g++' | grep -v rosmake | cut -d' ' -f1 | xargs -I{} kill {}
@@ -101,6 +103,8 @@ alias ws='source devel/setup.bash'
 alias ll='ls -rthal'
 alias la='ls -A'
 alias l='ls -CF'
+
+# other aliases
 alias o='xdg-open'
 alias k='pkill -9'
 alias c='clear'
@@ -113,10 +117,10 @@ alias ......='cd ../../../..'
 alias .......='cd ../../../../..'
 alias -- -='cd -'
 
-alias grepnode='rosnode list | grep'
-alias greptopic='rostopic list | grep'
-alias grepservice='rosservice list | grep'
-alias grepparam='rosparam list | grep'
+alias nodegrep='rosnode list | grep '
+alias topicgrep='rostopic list | grep '
+alias servicegrep='rosservice list | grep '
+alias paramgrep='rosparam list | grep '
 
 alias sudo='sudo '
 
