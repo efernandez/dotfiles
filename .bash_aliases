@@ -35,19 +35,6 @@ function rviz(){
   fi
 }
 
-function ws(){
-  if [[ $# < 1 ]]
-  then
-    WS_DIR=$(echo $PWD | cut -d '/' -f 1-5)
-    cd $WS_DIR
-    source devel/setup.bash
-    cd -
-  else
-    cd $HOME/ws/$1
-    source devel/setup.bash
-  fi
-}
-
 function release(){
   if [[ $# < 1 ]]
   then
@@ -107,6 +94,8 @@ function a() {
 function v() {
   $@ | vim -R -
 }
+
+alias ws='source devel/setup.bash'
 
 # ls aliases
 alias ll='ls -rthal'
