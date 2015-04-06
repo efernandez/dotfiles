@@ -68,6 +68,8 @@ function cm(){
 }
 
 alias psgrep='ps aux | grep '
+alias lgrep='ls | grep '
+alias fgrep='find | grep '
 
 roskill() {
   killall gazebo gzclient
