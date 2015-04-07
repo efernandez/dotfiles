@@ -67,10 +67,11 @@ function cm(){
   cd -
 }
 
-alias psgrep='ps aux | grep '
-alias lgrep='ls | grep '
-alias fgrep='find | grep '
-alias dgrep='dpkg -l | grep '
+alias psgrep='ps aux | grep -i '
+alias lgrep='ls | grep -i '
+alias fgrep='find | grep -i '
+alias dgrep='dpkg -l | grep -i '
+alias egrep='env | grep -i '
 
 roskill() {
   killall gazebo gzclient
@@ -121,10 +122,10 @@ alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias -- -='cd -'
 
-alias nodegrep='rosnode list | grep '
-alias topicgrep='rostopic list | grep '
-alias servicegrep='rosservice list | grep '
-alias paramgrep='rosparam list | grep '
+alias nodegrep='rosnode list | grep -i '
+alias topicgrep='rostopic list | grep -i '
+alias servicegrep='rosservice list | grep -i '
+alias paramgrep='rosparam list | grep -i '
 
 alias sudo='sudo '
 
