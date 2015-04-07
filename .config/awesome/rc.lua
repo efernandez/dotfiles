@@ -120,7 +120,8 @@ cpuwidget:set_background_color("#494B4F")
 cpuwidget:set_color("#FF5656")
 cpuwidget:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
 cpuwidget_t = awful.tooltip({ objects = { cpuwidget.widget },})
-vicious.register(cpuwidget, vicious.widgets.cpu, 
+-- vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
+vicious.register(cpuwidget, vicious.widgets.cpu,
   function (widget, args)
     cpuwidget_t:set_text("CPU Usage: " .. args[1] .. "%")
     return args[1]
@@ -204,7 +205,7 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        -- cpuwidget,
+        cpuwidget,
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
