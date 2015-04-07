@@ -24,3 +24,7 @@ sudo adduser efernandez netdev
 # gnome-terminal Default profile settings
 cp .gconf/apps/gnome-terminal/profiles/Default/%gconf.xml $HOME/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml
 
+# awesome and nautilus background issue
+# http://askubuntu.com/questions/306362/when-i-run-nautilus-or-guake-from-awesome-wm-the-wallpaper-is-reverted-to-my-uni
+sudo cp awesome/nautilus.desktop /usr/share/applications
+
