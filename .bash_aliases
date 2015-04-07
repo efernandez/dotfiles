@@ -70,6 +70,7 @@ function cm(){
 alias psgrep='ps aux | grep '
 alias lgrep='ls | grep '
 alias fgrep='find | grep '
+alias dgrep='dpkg -l | grep '
 
 roskill() {
   killall gazebo gzclient
