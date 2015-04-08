@@ -1,7 +1,7 @@
 
 alias rosmake='ROS_PARALLEL_JOBS=-j6 nice rosmake'
 
-function uri(){
+uri(){
   if [[ $# < 1 ]]
   then
     echo $ROS_MASTER_URI
@@ -20,13 +20,13 @@ function uri(){
   fi
 }
 
-function uln(){
+uln(){
   TARGET=`ls -l $1 | awk '{print $11}'`
   unlink $1
   cp $TARGET $1
 }
 
-function rviz(){
+rviz(){
   if [[ $# < 1 ]]
   then
     rosrun rviz rviz
@@ -35,7 +35,7 @@ function rviz(){
   fi
 }
 
-function release(){
+release(){
   if [[ $# < 1 ]]
   then
     ROS_DISTRO=`git br | grep '*' | awk '{print $2}' | cut -d'-' -f 1`
@@ -50,7 +50,7 @@ function release(){
   bloom-release -y `basename `pwd`` --track $ROS_DISTRO --rosdistro $ROS_DISTRO
 }
 
-function cm(){
+cm(){
   WS_DIR=($(echo $CMAKE_PREFIX_PATH | tr ':' '\n'))
   WS_DIR=${WS_DIR[0]}
   WS_DIR=${WS_DIR/\/devel/}
@@ -82,7 +82,7 @@ roskill() {
 
 alias deps='rosdep install --from-paths src -iy '
 
-function f() {
+f() {
   findcmd='find | grep -v "\.svn" | grep -v "\.git"'
   if [ $# -gt 0 ]; then
     result=`eval $findcmd | grep --color=always $* | tee /dev/stderr`
@@ -94,12 +94,12 @@ function f() {
   fi
 }
 
-function a() {
+a() {
   ack-grep -ai $*
 }
 
 # Pipe to vim
-function v() {
+v() {
   $@ | vim -R -
 }
 
@@ -140,7 +140,7 @@ alias x-start='service lightdm restart'
 
 # matlab in awesome
 # see http://awesome.naquadah.org/wiki/Problems_with_Java
-function matlab() {
+matlab() {
   wmname LG3D
   if [[ $# < 1 ]]
   then
