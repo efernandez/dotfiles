@@ -80,6 +80,8 @@ roskill() {
   roscore >/dev/null 2>&1 &
 }
 
+alias deps='rosdep install --from-paths src -iy '
+
 function f() {
   findcmd='find | grep -v "\.svn" | grep -v "\.git"'
   if [ $# -gt 0 ]; then
