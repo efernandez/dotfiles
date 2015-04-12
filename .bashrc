@@ -140,3 +140,5 @@ fi
 if [ ! $(echo $added_keys | grep -o -e github) ]; then
    ssh-add "$HOME/.ssh/id_rsa_github"
 fi
+
+export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:$HOME/stacks"
