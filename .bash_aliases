@@ -72,6 +72,7 @@ alias lgrep='ls | grep -i '
 alias fgrep='find | grep -i '
 alias dgrep='dpkg -l | grep -i '
 alias egrep='env | grep -i '
+alias rosdepgrep='rosdep db | grep -i '
 
 roskill() {
   killall gazebo gzclient
