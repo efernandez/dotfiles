@@ -104,6 +104,8 @@ v() {
   $@ | vim -R -
 }
 
+alias vi='vim '
+
 alias ws='source devel/setup.bash'
 
 # ls aliases
