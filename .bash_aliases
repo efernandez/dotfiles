@@ -75,9 +75,9 @@ alias egrep='env | grep -i '
 alias rosdepgrep='rosdep db | grep -i '
 
 roskill() {
-  killall gazebo gzclient
-  psgrep ros | grep -v vim | grep -v sublime | grep -v 'g++' | grep -v rosmake | cut -d' ' -f1 | xargs -I{} kill {}
-  psgrep ros | grep -v vim | grep -v sublime | grep -v 'g++' | grep -v rosmake | cut -d' ' -f1 | xargs -I{} kill -9 {}
+  killall -q gazebo gzclient
+  psgrep ros | grep -v vim | grep -v sublime | grep -v 'g++' | grep -v rosmake | grep -v grep | awk '{print $2}' | xargs -I{} kill {}
+  psgrep ros | grep -v vim | grep -v sublime | grep -v 'g++' | grep -v rosmake | grep -v grep | awk '{print $2}' | xargs -I{} kill -9 {}
   roscore >/dev/null 2>&1 &
 }
 
