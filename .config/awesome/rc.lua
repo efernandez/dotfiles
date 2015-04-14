@@ -442,7 +442,8 @@ do
         "skype",
         "nm-applet",
         "bluetooth-applet",
-        "xfce4-power-manager"
+        "xfce4-power-manager",
+        "wmname LG3D"
     }
 
     for _,i in pairs(cmds) do
