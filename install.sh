@@ -28,3 +28,5 @@ cp .gconf/apps/gnome-terminal/profiles/Default/%gconf.xml $HOME/.gconf/apps/gnom
 # http://askubuntu.com/questions/306362/when-i-run-nautilus-or-guake-from-awesome-wm-the-wallpaper-is-reverted-to-my-uni
 sudo cp awesome/nautilus.desktop /usr/share/applications
 
+# awesome fix for mime types with xdg-open
+sudo cp awesome/xdg-open /usr/bin
