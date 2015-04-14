@@ -1,6 +1,21 @@
 
 alias rosmake='ROS_PARALLEL_JOBS=-j6 nice rosmake'
 
+guri(){
+  if [[ $# < 1 ]]
+  then
+    echo $GAZEBO_MASTER_URI
+  else
+    if [[ $# < 2 ]]
+    then
+      PORT=11345
+    else
+      PORT=$2
+    fi
+    export GAZEBO_MASTER_URI=http://$1:$PORT
+  fi
+}
+
 uri(){
   if [[ $# < 1 ]]
   then
@@ -12,10 +27,11 @@ uri(){
     else
       if [[ $# < 2 ]]
       then
-        export ROS_MASTER_URI=http://$1:11311
+        PORT=11311
       else
-        export ROS_MASTER_URI=http://$1:$2
+        PORT=$2
       fi
+      export ROS_MASTER_URI=http://$1:$PORT
     fi
   fi
 }
