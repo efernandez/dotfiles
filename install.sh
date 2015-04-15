@@ -2,6 +2,8 @@
 
 cp .gitconfig ~
 
+cp .tigrc ~
+
 cp -r .config/awesome ~/.config
 
 cp .bashrc ~
