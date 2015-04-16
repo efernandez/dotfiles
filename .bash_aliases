@@ -159,6 +159,8 @@ alias ud='udisks --detach'
 alias log-out='gnome-session-quit'
 alias x-start='service lightdm restart'
 
+alias off='xset dpms force off'
+
 alias cbuild='catkin build '
 alias cclean='catkin clean '
 alias cinstall='catkin build --catkin-make-args install '
