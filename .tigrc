@@ -2,7 +2,7 @@
 # https://github.com/jonas/tig/wiki/Bindings
 
 # Move in diff view with arrow keys:
-bind diff Up move-up and bind diff Down move-down
+#bind diff Up move-up and bind diff Down move-down
 
 # Intent to add (might be useful if you want to add-patch a newly created file):
 bind status N !@git add -N %(file)
@@ -23,7 +23,7 @@ bind refs n !@git branch "%(prompt Enter branch name: )"
 # bind generic T !git notes edit %(commit)
 
 # less-like page scrolling:
-bind generic ^f scroll-page-down and bind generic ^b scroll-page-up
+#bind generic ^f scroll-page-down and bind generic ^b scroll-page-up
 
 # Add verbose flag to git-commit:
 bind generic C !git commit -v
