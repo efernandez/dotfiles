@@ -89,6 +89,7 @@ alias fgrep='find | grep -i '
 alias dgrep='dpkg -l | grep -i '
 alias egrep='env | grep -i '
 alias rosdepgrep='rosdep db | grep -i '
+alias envgrep='env | grep -i '
 
 alias roscore='roscore >/dev/null 2>&1 &'
 
