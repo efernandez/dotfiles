@@ -47,7 +47,8 @@ rviz(){
   then
     rosrun rviz rviz
   else
-    rosrun rviz rviz -d `rospack find ${1}_2dnav`/config/rviz/navigation.rviz
+    #rosrun rviz rviz -d `rospack find ${1}_2dnav`/config/rviz/navigation.rviz
+    rosrun rviz rviz -d `rospack find ${1}_viz`/configs/autonomy.rviz
   fi
 }
 
