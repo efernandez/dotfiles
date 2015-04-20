@@ -147,10 +147,10 @@ alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias -- -='cd -'
 
-alias nodegrep='rosnode list | grep -i '
-alias topicgrep='rostopic list | grep -i '
-alias servicegrep='rosservice list | grep -i '
-alias paramgrep='rosparam list | grep -i '
+alias rosnodegrep='rosnode list | grep -i '
+alias rostopicgrep='rostopic list | grep -i '
+alias rosservicegrep='rosservice list | grep -i '
+alias rosparamgrep='rosparam list | grep -i '
 
 alias sudo='sudo '
 
