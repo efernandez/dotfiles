@@ -101,6 +101,15 @@ roskill() {
   roscore
 }
 
+rosbagfilter() {
+  INPUT=$1
+  FRAME=$2
+
+  OUTPUT=${INPUT//.bag/_filtered.bag}
+
+  rosbag filter $INPUT $OUTPUT "topic != '/tf' or m.transforms[0].header.frame_id != '$FRAME'"
+}
+
 alias deps='rosdep install --from-paths src -iy '
 
 f() {
