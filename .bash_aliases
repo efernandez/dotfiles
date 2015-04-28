@@ -67,6 +67,8 @@ release(){
   bloom-release -y `basename `pwd`` --track $ROS_DISTRO --rosdistro $ROS_DISTRO
 }
 
+alias catkin_make='catkin_make -j8 -DCMAKE_BUILD_TYPE=RelWithDebInfo '
+
 cm(){
   WS_DIR=($(echo $CMAKE_PREFIX_PATH | tr ':' '\n'))
   WS_DIR=${WS_DIR[0]}
