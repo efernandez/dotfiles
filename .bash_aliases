@@ -94,6 +94,10 @@ alias envgrep='env | grep -i '
 
 alias roscore='roscore >/dev/null 2>&1 &'
 
+# misspelling aliases:
+alias rosonde='rosnode '
+alias rosndoe='rosnode '
+
 roskill() {
   killall -q gazebo gzclient
   psgrep ros | grep -v vim | grep -v sublime | grep -v 'g++' | grep -v rosmake | grep -v grep | awk '{print $2}' | xargs -I{} kill {}
