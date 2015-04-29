@@ -182,6 +182,9 @@ alias cbuild='catkin build --no-notify '
 alias cclean='catkin clean --no-notify '
 alias cinstall='catkin build --no-notify --catkin-make-args install '
 
+# Current year calendar
+alias cal='cal -y'
+
 # matlab in awesome
 # see http://awesome.naquadah.org/wiki/Problems_with_Java
 matlab() {
