@@ -124,6 +124,8 @@ alias roscore='roscore >/dev/null 2>&1 &'
 alias rosonde='rosnode '
 alias rosndoe='rosnode '
 
+alias joystick='rosrun joy joy_node _dev:=/dev/input/js1 '
+
 roskill() {
   killall -q gazebo gzclient
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill {}
