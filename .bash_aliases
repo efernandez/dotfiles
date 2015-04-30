@@ -67,6 +67,30 @@ release(){
   bloom-release -y `basename `pwd`` --track $ROS_DISTRO --rosdistro $ROS_DISTRO
 }
 
+function term()
+{
+  if [[ $# > 0 ]]
+  then
+    gnome-terminal -x bash -ci "$*; bash"
+  else
+    gnome-terminal -x "bash"
+  fi
+}
+
+function termn()
+{
+  if [[ $# > 0 ]]; then
+    N=$1
+    shift
+  else
+    N=1
+  fi
+
+  for i in $(seq 1 $N); do
+    term $*
+  done
+}
+
 alias catkin_make='catkin_make -j8 -DCMAKE_BUILD_TYPE=RelWithDebInfo '
 
 cm(){
