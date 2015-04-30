@@ -16,6 +16,18 @@ guri(){
   fi
 }
 
+rosip()
+{
+  if [[ $# < 1 ]]
+  then
+    INTERFACE=wlan0
+  else
+    INTERFACE=$1
+  fi
+
+  export ROS_IP=$(ifconfig $INTERFACE | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1)
+}
+
 uri(){
   if [[ $# < 1 ]]
   then
