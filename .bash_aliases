@@ -102,8 +102,8 @@ alias rosndoe='rosnode '
 
 roskill() {
   killall -q gazebo gzclient
-  psgrep ros | grep -v vim | grep -v sublime | grep -v 'g++' | grep -v rosmake | grep -v grep | awk '{print $2}' | xargs -I{} kill {}
-  psgrep ros | grep -v vim | grep -v sublime | grep -v 'g++' | grep -v rosmake | grep -v grep | awk '{print $2}' | xargs -I{} kill -9 {}
+  psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill {}
+  psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill -9 {}
   roscore
 }
 
