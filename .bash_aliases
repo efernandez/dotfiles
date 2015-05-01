@@ -103,7 +103,16 @@ function termn()
   done
 }
 
-alias catkin_make='catkin_make -j8 -DCMAKE_BUILD_TYPE=RelWithDebInfo '
+catkin_make()
+{
+  ARGS="-j8 -DCMAKE_BUILD_TYPE=RelWithDebInfo"
+
+  if [[ $# > 0 ]]; then
+    ARGS="$ARGS --only-pkg-with-deps $*"
+  fi
+
+  catkin_make $ARGS
+}
 
 cm(){
   WS_DIR=($(echo $CMAKE_PREFIX_PATH | tr ':' '\n'))
