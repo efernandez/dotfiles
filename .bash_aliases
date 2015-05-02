@@ -103,7 +103,7 @@ function termn()
   done
 }
 
-catkin_make()
+cake()
 {
   ARGS="-j8 -DCMAKE_BUILD_TYPE=RelWithDebInfo"
 
