@@ -1,0 +1,6 @@
+#hardstatus alwayslastline '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR} (%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}] %{=b C}[ %m/%d %c ]%{W}'
+startup_message off
+#defscrollback 30000
+
+# http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux
+termcapinfo xterm*|xs|rxvt|terminal ti@:te@
