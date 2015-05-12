@@ -107,6 +107,14 @@ fi
 #SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/enrique/keyring-.*/ssh'`
 #[ -z "$SSH_AUTH_SOCK" ] || export SSH_AUTH_SOCK
 
+# Support for ssh-agent with screen sessions:
+# https://gist.github.com/martijnvermaat/8070533
+# http://superuser.com/questions/180148/how-do-you-get-screen-to-automatically-connect-to-the-current-ssh-agent-when-re/424588#424588
+if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock;
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock;
+
 # Search history with arrows (like in Matlab):
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
