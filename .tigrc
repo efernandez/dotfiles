@@ -26,7 +26,7 @@ bind main ! !git revert %(commit)
 #bind generic ^f scroll-page-down and bind generic ^b scroll-page-up
 
 # Add verbose flag to git-commit:
-bind generic C !git commit -v
+#bind generic C !git commit -v
 
 # Amend last commit:
 bind generic + !git commit --amend
