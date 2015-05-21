@@ -12,6 +12,10 @@ require("vicious")
 -- require("delightful")
 -- @todo see http://awesome.naquadah.org/wiki/Delightful
 --       see http://solitudo.net/software/awesome/delightful/ (installation)
+-- Lain layouts, widgets and utilities
+-- (successor of awesome-vain: https://github.com/vain/awesome-vain)
+-- https://github.com/copycat-killer/lain
+-- require("lain")
 
 -- Load Debian menu entries
 require("debian.menu")
