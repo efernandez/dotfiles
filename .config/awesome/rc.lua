@@ -7,9 +7,9 @@ require("beautiful")
 -- Notification library
 require("naughty")
 -- Widget library
-require('vicious')
+require("vicious")
 -- Delightful widgets
--- require('delightful')
+-- require("delightful")
 -- @todo see http://awesome.naquadah.org/wiki/Delightful
 --       see http://solitudo.net/software/awesome/delightful/ (installation)
 
