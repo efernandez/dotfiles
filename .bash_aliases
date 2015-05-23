@@ -229,6 +229,7 @@ alias off='xset dpms force off'
 alias cbuild='catkin build --no-notify '
 alias cclean='catkin clean --no-notify '
 alias cinstall='catkin build --no-notify --catkin-make-args install '
+alias ctest='catkin build --no-notify --catkin-make-args run_tests '
 
 # Current year calendar
 alias cal='cal -y'
