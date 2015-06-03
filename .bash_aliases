@@ -48,6 +48,22 @@ uri(){
   fi
 }
 
+log()
+{
+  if [[ $# < 1 ]]
+  then
+    rosservice list | grep get_loggers | cut -d/ -f 2
+  elif [[ $# < 2 ]]
+  then
+    rosservice call $1/get_loggers
+  elif [[ $# < 3 ]]
+  then
+    rosservice call $1/set_logger_level "{logger: ros, level: $2}"
+  else
+    rosservice call $1/set_logger_level "{logger: $2, level: $3}"
+  fi
+}
+
 uln(){
   TARGET=`ls -l $1 | awk '{print $11}'`
   unlink $1
