@@ -145,7 +145,7 @@ fi
 
 shopt -s autocd
 
-. /opt/ros/hydro/setup.bash
+. /opt/ros/$(rosversion -d)/setup.bash
 
 #eval `ssh-agent -s`
 added_keys=`ssh-add -l`
