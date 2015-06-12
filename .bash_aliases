@@ -1,7 +1,8 @@
 
 alias rosmake='ROS_PARALLEL_JOBS=-j6 nice rosmake'
 
-guri(){
+function guri()
+{
   if [[ $# < 1 ]]
   then
     echo $GAZEBO_MASTER_URI
@@ -16,7 +17,7 @@ guri(){
   fi
 }
 
-rosip()
+function rosip()
 {
   if [[ $# < 1 ]]
   then
@@ -28,7 +29,8 @@ rosip()
   export ROS_IP=$(ifconfig $INTERFACE | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1)
 }
 
-uri(){
+function uri()
+{
   if [[ $# < 1 ]]
   then
     echo $ROS_MASTER_URI
@@ -48,7 +50,7 @@ uri(){
   fi
 }
 
-log()
+function log()
 {
   if [[ $# < 1 ]]
   then
@@ -64,7 +66,8 @@ log()
   fi
 }
 
-uln(){
+function uln()
+{
   TARGET=`ls -l $1 | awk '{print $11}'`
   unlink $1
   cp $TARGET $1
@@ -80,7 +83,8 @@ rviz(){
   fi
 }
 
-release(){
+function release()
+{
   if [[ $# < 1 ]]
   then
     ROS_DISTRO=`git br | grep '*' | awk '{print $2}' | cut -d'-' -f 1`
@@ -119,7 +123,7 @@ function termn()
   done
 }
 
-cake()
+function cake()
 {
   ARGS="-j8 -DCMAKE_BUILD_TYPE=RelWithDebInfo"
 
@@ -130,7 +134,8 @@ cake()
   catkin_make $ARGS
 }
 
-cm(){
+function cm()
+{
   WS_DIR=($(echo $CMAKE_PREFIX_PATH | tr ':' '\n'))
   WS_DIR=${WS_DIR[0]}
   WS_DIR=${WS_DIR/\/devel/}
@@ -164,14 +169,16 @@ alias rosndoe='rosnode '
 
 alias joystick='rosrun joy joy_node _dev:=/dev/input/js1 '
 
-roskill() {
+function roskill()
+{
   killall -q gazebo gzclient
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill {}
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill -9 {}
   roscore
 }
 
-rosbagfilter() {
+function rosbagfilter()
+{
   INPUT=$1
   FRAME=$2
 
@@ -182,7 +189,8 @@ rosbagfilter() {
 
 alias deps='rosdep install --from-paths src -iy '
 
-f() {
+function f()
+{
   findcmd='find | grep -v "\.svn" | grep -v "\.git"'
   if [ $# -gt 0 ]; then
     result=`eval $findcmd | grep --color=always $* | tee /dev/stderr`
@@ -194,12 +202,14 @@ f() {
   fi
 }
 
-a() {
+function a()
+{
   ack-grep -ai $*
 }
 
 # Pipe to vim
-v() {
+function v()
+{
   $@ | vim -R -
 }
 
@@ -267,7 +277,8 @@ alias cal='cal -y'
 
 # matlab in awesome
 # see http://awesome.naquadah.org/wiki/Problems_with_Java
-matlab() {
+function matlab()
+{
   wmname LG3D
   if [[ $# < 1 ]]
   then
@@ -279,16 +290,19 @@ matlab() {
 }
 
 # set operations between files
-set_union() {
+function set_union()
+{
   cat "$1" "$2" | sort | uniq
 }
 
-set_difference() {
+function set_difference()
+{
   cat "$1" "$2" "$2" | sort | uniq -u
 }
 
 # repeat
-repeat() {
+function repeat()
+{
   n=$1
   shift
   while [ $(( n -= 1 )) -ge 0 ]
