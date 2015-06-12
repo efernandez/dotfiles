@@ -231,6 +231,21 @@ alias rostopicgrep='rostopic list | grep -i '
 alias rosservicegrep='rosservice list | grep -i '
 alias rosparamgrep='rosparam list | grep -i '
 
+function rosnodeinfogrep()
+{
+  if [[ $# < 1 ]]
+  then
+    PATTERN="unknown"
+  else
+    PATTERN=$1
+  fi
+
+  for node in $(rosnode list)
+  do
+    rosnode info | grep -i $PATTERN
+  done
+}
+
 alias sudo='sudo '
 
 alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
