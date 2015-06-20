@@ -450,6 +450,6 @@ do
     }
 
     for _,i in pairs(cmds) do
-        awful.util.spawn(i)
+        awful.util.spawn_with_shell(i)
     end
 end
