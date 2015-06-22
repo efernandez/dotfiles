@@ -380,6 +380,14 @@ globalkeys = awful.util.table.join(globalkeys,
         awful.util.spawn("amixer -D pulse set Capture toggle", false) end))
 -- }}}
 
+-- {{{ Brightness keys
+globalkeys = awful.util.table.join(globalkeys,
+    awful.key({ }, "XF86MonBrightnessUp", function ()
+        awful.util.spawn("xbacklight -inc 10", false) end),
+    awful.key({ }, "XF86MonBrightnessDown", function ()
+        awful.util.spawn("xbacklight -dec 10", false) end))
+-- }}}
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
