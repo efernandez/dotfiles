@@ -388,6 +388,12 @@ globalkeys = awful.util.table.join(globalkeys,
         awful.util.spawn("xbacklight -dec 10", false) end))
 -- }}}
 
+-- {{{ External Display key
+globalkeys = awful.util.table.join(globalkeys,
+    awful.key({ }, "XF86Display", function ()
+        awful.util.spawn("xrandr --output HDMI1 --auto --right-of eDP1", false) end))
+-- }}}
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
