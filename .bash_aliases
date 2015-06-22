@@ -265,7 +265,7 @@ alias x-start='service lightdm restart'
 alias off='xset dpms force off'
 
 alias cbuild='catkin build --no-notify '
-alias cclean='catkin clean --no-notify '
+alias cclean='catkin clean -a '
 alias cinstall='catkin build --no-notify --catkin-make-args install '
 alias ctest='catkin build --no-notify --catkin-make-args run_tests '
 
