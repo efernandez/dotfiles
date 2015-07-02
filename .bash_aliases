@@ -203,7 +203,7 @@ function f()
   fi
 }
 
-alias a='ack-grep -ki '
+alias a='ack-grep -i '
 
 # Pipe to vim
 function v()
