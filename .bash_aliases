@@ -265,10 +265,11 @@ alias x-start='service lightdm restart'
 
 alias off='xset dpms force off'
 
-alias cbuild='catkin build --no-notify '
+alias cbuild='catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release -- --no-notify '
+#alias cbuild='catkin build --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -- --no-notify '
 alias cclean='catkin clean -a '
-alias cinstall='catkin build --no-notify --catkin-make-args install '
-alias ctest='catkin build --no-notify --catkin-make-args run_tests '
+alias cinstall='catkin build --no-notify --catkin-make-args install -- '
+alias ctest='catkin build --no-notify --catkin-make-args run_tests -- '
 
 # Current year calendar
 alias cal='cal -y'
