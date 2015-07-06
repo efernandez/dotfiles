@@ -173,8 +173,13 @@ alias joystick='rosrun joy joy_node _dev:=/dev/input/js1 '
 function roskill()
 {
   killall -q gazebo gzclient
+
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill {}
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill -9 {}
+
+  psgrep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill {}
+  psgrep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill -9 {}
+
   roscore
 }
 
