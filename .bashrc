@@ -159,3 +159,4 @@ fi
 ulimit -c unlimited
 
 export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:$HOME/stacks"
+export PATH=/usr/lib/ccache:${PATH}
