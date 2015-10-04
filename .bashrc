@@ -128,7 +128,7 @@ if [[ "$PS1" != "" ]]; then
         fi
     }
     function _ps1_git_branch() {
-        branch=$(git branch 2>/dev/null | grep '*' | awk '{print $2}')
+        branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
         if [[ "$branch" != "" ]]; then
             echo "<$branch>"
         fi
