@@ -296,6 +296,9 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "p", function () awful.util.spawn("xscreensaver-command --lock") end),
     awful.key({ }, "Print",  function () awful.util.spawn("gnome-screenshot") end),
+    awful.key({ modkey }, "Print",  function () awful.util.spawn("gnome-screenshot -w") end),
+    awful.key({ modkey, "Control" }, "Print",  function () awful.util.spawn("gnome-screenshot -a") end),
+    awful.key({ modkey, "Shift" }, "Print",  function () awful.util.spawn("gnome-screenshot -i") end),
 
     awful.key({ modkey }, "a", function () awful.layout.set(awful.layout.suit.tile) end)
 )
