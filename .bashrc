@@ -152,6 +152,9 @@ added_keys=`ssh-add -l`
 if [ ! $(echo $added_keys | grep -o -e bitbucket) ]; then
    ssh-add "$HOME/.ssh/id_rsa_bitbucket"
 fi
+if [ ! $(echo $added_keys | grep -o -e gitlab) ]; then
+   ssh-add "$HOME/.ssh/id_rsa_gitlab"
+fi
 if [ ! $(echo $added_keys | grep -o -e github) ]; then
    ssh-add "$HOME/.ssh/id_rsa_github"
 fi
