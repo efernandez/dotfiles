@@ -153,6 +153,7 @@ function cm()
   cd -
 }
 
+#alias psgrep='pgrep '
 alias psgrep='ps aux | grep -i '
 alias lgrep='ls | grep -i '
 alias fgrep='find | grep -i '
@@ -174,6 +175,8 @@ function roskill()
 {
   killall -q gazebo gzclient
 
+  #pkill -9 ros
+  #pgrep ros | ...
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill {}
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep' | awk '{print $2}' | xargs -I{} kill -9 {}
 
@@ -276,6 +279,7 @@ alias cdebug='catkin build --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -- --n
 alias cclean='catkin clean -a '
 alias cinstall='catkin build --no-notify --catkin-make-args install -- '
 alias ctest='catkin build --no-notify --catkin-make-args run_tests -- '
+alias cconfig='catkin config --install --isolate-install --isolate-devel '
 
 # Current year calendar
 alias cal='cal -y'
