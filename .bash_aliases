@@ -73,14 +73,16 @@ function uln()
   cp $TARGET $1
 }
 
-rviz(){
+rviz()
+{
   if [[ $# < 1 ]]
   then
     rosrun rviz rviz
   else
     #rosrun rviz rviz -d `rospack find ${1}_2dnav`/config/rviz/navigation.rviz
     #rosrun rviz rviz -d `rospack find ${1}_viz`/configs/autonomy.rviz
-    rosrun rviz rviz -d `rospack find ${1}_viz`/config/auto_core.rviz
+    #rosrun rviz rviz -d `rospack find ${1}_viz`/config/auto_core.rviz
+    rosrun rviz rviz -d ${1}
   fi
 }
 
