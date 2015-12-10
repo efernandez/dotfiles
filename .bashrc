@@ -145,7 +145,7 @@ fi
 
 shopt -s autocd
 
-. /opt/ros/$(rosversion -d)/setup.bash
+source /opt/ros/indigo/setup.bash
 
 #eval `ssh-agent -s`
 added_keys=`ssh-add -l`
