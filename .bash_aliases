@@ -370,3 +370,9 @@ alias cbwd="pwd | cb"
 
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"
+# Paste
+alias cbp="xclip -o -selection clipboard"
+
+# VTune
+alias vtune='amplxe-cl -collect hotspots -run-pass-thru=--no-altstack -result-dir vtune_result_dir_$(date +%Y-%m-%d-%H-%M-%S) -- '
+alias vtune-gui='amplxe-gui '
