@@ -165,7 +165,7 @@ alias rosdepgrep='rosdep db | grep -i '
 alias envgrep='env | grep -i '
 alias hgrep='history | grep -i '
 
-alias roscore='roscore >/dev/null 2>&1 &'
+alias roscorebg='roscore >/dev/null 2>&1 &'
 
 # misspelling aliases:
 alias rosonde='rosnode '
@@ -185,7 +185,7 @@ function roskill()
   psgrep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill {}
   psgrep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill -9 {}
 
-  roscore
+  roscorebg
 }
 
 function rosbagfilter()
