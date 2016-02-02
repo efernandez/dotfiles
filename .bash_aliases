@@ -78,11 +78,11 @@ rviz()
   if [[ $# < 1 ]]
   then
     rosrun rviz rviz
-  else
-    #rosrun rviz rviz -d `rospack find ${1}_2dnav`/config/rviz/navigation.rviz
-    #rosrun rviz rviz -d `rospack find ${1}_viz`/configs/autonomy.rviz
-    #rosrun rviz rviz -d `rospack find ${1}_viz`/config/auto_core.rviz
+  elif [[ $# < 2 ]]
+  then
     rosrun rviz rviz -d ${1}
+  else
+    rosrun rviz rviz -d $(rospack find ${1})/config/${2}.rviz
   fi
 }
 
