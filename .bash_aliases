@@ -275,9 +275,9 @@ alias x-start='service lightdm restart'
 
 alias off='xset dpms force off'
 
-alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=Release -- --no-notify '
-alias cdebug='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=RelWithDebInfo -- --no-notify '
-#alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=Debug -- --no-notify '
+alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=Release -- --no-notify '
+alias cdebug='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=RelWithDebInfo -- --no-notify '
+#alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=Debug -- --no-notify '
 alias cclean='catkin clean -a '
 alias cinstall='catkin build --no-notify --catkin-make-args install -- '
 alias ctest='catkin run_tests --no-deps --this --no-notify '
