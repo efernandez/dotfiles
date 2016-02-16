@@ -397,6 +397,16 @@ globalkeys = awful.util.table.join(globalkeys,
         awful.util.spawn("xrandr --output HDMI1 --auto --right-of eDP1", false) end))
 -- }}}
 
+-- {{{ Keyboard Layout
+-- We could query the current layout with:
+-- setxkbmap -query | grep layout | awk '{print $2}'
+globalkeys = awful.util.table.join(globalkeys,
+    awful.key({ modkey }, "s", function()
+        awful.util.spawn("setxkbmap es", false) end),
+    awful.key({ modkey }, "e", function()
+        awful.util.spawn("setxkbmap us", false) end))
+-- }}}
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
