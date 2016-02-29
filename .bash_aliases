@@ -380,3 +380,16 @@ alias vtune-gui='amplxe-gui '
 
 # Battery status
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|percentage"'
+
+# Anti Virus:
+function virus()
+{
+  if [[ $# -lt 1 ]]
+  then
+    DIR=/
+  else
+    DIR=$1
+  fi
+
+  clamscan -r --bell -i $DIR
+}
