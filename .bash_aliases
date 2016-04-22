@@ -279,7 +279,7 @@ alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-pa
 alias cbuildnowarn='catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release -- --no-notify '
 alias cdebug='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=RelWithDebInfo -- --no-notify '
 #alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=Debug -- --no-notify '
-alias cclean='catkin clean -a '
+alias cclean='catkin clean --deinit -y '
 alias cinstall='catkin build --no-notify --catkin-make-args install -- '
 alias ctest='catkin run_tests --no-deps --this --no-notify '
 alias cconfig='catkin config --install --isolate-install --isolate-devel '
