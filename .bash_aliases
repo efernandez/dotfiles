@@ -90,16 +90,15 @@ function release()
 {
   if [[ $# < 1 ]]
   then
-    ROS_DISTRO=`git br | grep '*' | awk '{print $2}' | cut -d'-' -f 1`
+    ROS_DISTRO=indigo
   else
     ROS_DISTRO=$1
   fi
 
   catkin_generate_changelog
   git ci -am "Update changelog"
-  git push
-  catkin_prepare_release
-  bloom-release -y `basename `pwd`` --track $ROS_DISTRO --rosdistro $ROS_DISTRO
+  catkin_prepare_release -y
+  bloom-release -y $(basename $(pwd)) --track $ROS_DISTRO --rosdistro $ROS_DISTRO
 }
 
 function term()
