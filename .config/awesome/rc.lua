@@ -485,6 +485,7 @@ do
         "synapse -s",
         "dropbox start",
         "skype",
+        "slack",
         "nm-applet",
         "bluetooth-applet",
         "xfce4-power-manager",
