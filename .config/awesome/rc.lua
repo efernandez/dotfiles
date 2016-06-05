@@ -152,7 +152,10 @@ batterywidget_t = awful.tooltip({ objects = { batterywidget.widget } })
 batterywidget_t:set_text("Battery: " .. get_battery_level() .. "%")
 batterywidgettimer:add_signal("timeout",
   function()
-    batterywidget:set_value(get_battery_level() / 100.0)
+    local level = get_battery_level()
+
+    batterywidget_t:set_text("Battery: " .. level .. "%")
+    batterywidget:set_value(level / 100.0)
   end
 )
 batterywidgettimer:start()
