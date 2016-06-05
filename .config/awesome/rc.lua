@@ -9,9 +9,10 @@ require("naughty")
 -- Widget library
 require("vicious")
 -- Delightful widgets
--- require("delightful")
--- @todo see http://awesome.naquadah.org/wiki/Delightful
---       see http://solitudo.net/software/awesome/delightful/ (installation)
+-- Note that delightful only works with awesome 3.5, and this configuration is for 3.4,
+-- and they're not compatible!
+-- see http://awesome.naquadah.org/wiki/Delightful
+-- require("delightful.widgets.battery")
 -- Lain layouts, widgets and utilities
 -- (successor of awesome-vain: https://github.com/vain/awesome-vain)
 -- https://github.com/copycat-killer/lain
