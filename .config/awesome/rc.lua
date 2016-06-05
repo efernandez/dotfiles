@@ -130,20 +130,44 @@ vicious.register(cpuwidget, vicious.widgets.cpu,
   function (widget, args)
     cpuwidget_t:set_text("CPU Usage: " .. args[1] .. "%")
     return args[1]
-  end)
+  end
+)
 
 -- Battery widget
-batterywidget = widget({ type = "textbox" })
-batterywidget.text = " | Battery | "
+function get_battery_level()
+  local fh = assert(io.popen("acpi | cut -d, -f 2 | cut -d% -f 1", "r"))
+  local level = fh:read("*l")
+  return level
+end
+
+batterywidget = awful.widget.progressbar()
+batterywidget:set_width(20)
+batterywidget:set_height(30)
+batterywidget:set_vertical(true)
+batterywidget:set_background_color("#494B4F")
+batterywidget:set_color("#FF5656")
+batterywidget:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
 batterywidgettimer = timer({ timeout = 5 })
+batterywidget_t = awful.tooltip({ objects = { batterywidget.widget } })
+batterywidget_t:set_text("Battery: " .. get_battery_level() .. "%")
 batterywidgettimer:add_signal("timeout",
   function()
-    fh = assert(io.popen("acpi | cut -d, -f 2 -", "r"))
-    batterywidget.text = " |" .. fh:read("*l") .. " | "
-    fh:close()
+    batterywidget:set_value(get_battery_level() / 100.0)
   end
 )
 batterywidgettimer:start()
+-- Textbox version:
+--batterywidget = widget({ type = "textbox" })
+--batterywidget.text = " | Battery | "
+--batterywidgettimer = timer({ timeout = 5 })
+--batterywidgettimer:add_signal("timeout",
+  --function()
+    --fh = assert(io.popen("acpi | cut -d, -f 2 -", "r"))
+    --batterywidget.text = " |" .. fh:read("*l") .. " | "
+    --fh:close()
+  --end
+--)
+--batterywidgettimer:start()
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
