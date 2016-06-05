@@ -132,6 +132,19 @@ vicious.register(cpuwidget, vicious.widgets.cpu,
     return args[1]
   end)
 
+-- Battery widget
+batterywidget = widget({ type = "textbox" })
+batterywidget.text = " | Battery | "
+batterywidgettimer = timer({ timeout = 5 })
+batterywidgettimer:add_signal("timeout",
+  function()
+    fh = assert(io.popen("acpi | cut -d, -f 2 -", "r"))
+    batterywidget.text = " |" .. fh:read("*l") .. " | "
+    fh:close()
+  end
+)
+batterywidgettimer:start()
+
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
@@ -211,6 +224,7 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         cpuwidget,
+        batterywidget,
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
