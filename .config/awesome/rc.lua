@@ -156,6 +156,11 @@ batterywidgettimer:add_signal("timeout",
 
     batterywidget_t:set_text("Battery: " .. level .. "%")
     batterywidget:set_value(level / 100.0)
+
+    if tonumber(level) < 10 then
+      cwd = os.getenv("HOME") .. "/.config/awesome/"
+      awful.util.spawn("notify-send -i " .. cwd .. "themes/notifications/low-battery.jpg -u critical -t 2000 'Battery Level' 'Low battery'")
+    end
   end
 )
 batterywidgettimer:start()
