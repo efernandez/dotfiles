@@ -140,6 +140,12 @@ function get_battery_level()
   return level
 end
 
+function get_battery_state()
+  local fh = assert(io.popen("acpi | cut -d, -f 1 | cut -d' '  -f 3", "r"))
+  local state = fh:read("*l")
+  return state
+end
+
 batterywidget = awful.widget.progressbar()
 batterywidget:set_width(20)
 batterywidget:set_height(30)
@@ -153,11 +159,12 @@ batterywidget_t:set_text("Battery: " .. get_battery_level() .. "%")
 batterywidgettimer:add_signal("timeout",
   function()
     local level = get_battery_level()
+    local state = get_battery_state()
 
-    batterywidget_t:set_text("Battery: " .. level .. "%")
+    batterywidget_t:set_text("Battery: " .. level .. "% (" .. state .. ")")
     batterywidget:set_value(level / 100.0)
 
-    if tonumber(level) < 10 then
+    if tonumber(level) < 15 and state == "Discharging" then
       cwd = os.getenv("HOME") .. "/.config/awesome/"
       awful.util.spawn("notify-send -i " .. cwd .. "themes/notifications/low-battery.jpg -u critical -t 2000 'Battery Level' 'Low battery'")
     end
