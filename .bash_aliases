@@ -172,6 +172,11 @@ alias rosndoe='rosnode '
 
 alias joystick='rosrun joy joy_node _dev:=/dev/input/js1 '
 
+function lsofnode()
+{
+  rosnode info $1 | grep -i pid | awk '{print $2}' | xargs lsof -p
+}
+
 function roskill()
 {
   killall -q gazebo gzclient
