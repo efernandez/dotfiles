@@ -1,0 +1,5 @@
+keycodes for vim, to use Ctrl+Tab:
+
+http://stackoverflow.com/questions/2686766/mapping-c-tab-in-my-vimrc-fails-in-ubuntu
+http://www.staldal.nu/tech/2009/01/10/how-to-use-ctrl-tab-in-gnu-screen/
+http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
