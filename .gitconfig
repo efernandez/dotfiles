@@ -17,6 +17,8 @@
 
     up = !git remote update -p; git merge --f-only @{u}
 
+    di = diff -b
+
 [color]
     ui = auto
 
