@@ -146,6 +146,9 @@ fi
 shopt -s autocd
 
 source /opt/ros/indigo/setup.bash
+export ROBOT_SIMULATION=true
+export IS_GAZEBO=true
+export ROS_IP=127.0.0.1
 
 #eval `ssh-agent -s`
 added_keys=`ssh-add -l`
