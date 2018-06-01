@@ -154,8 +154,7 @@ function cm()
   cd -
 }
 
-#alias psgrep='pgrep '
-alias psgrep='ps aux | grep -i '
+alias psgrep='pgrep '
 alias lgrep='ls | grep -i '
 alias fgrep='find | grep -i '
 alias dgrep='dpkg -l | grep -i '
@@ -181,15 +180,11 @@ function roskill()
 {
   killall -q gazebo gzclient
 
-  #pkill -9 ros
-  #pgrep ros | ...
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill {}
   psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill -9 {}
 
   psgrep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill {}
   psgrep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill -9 {}
-
-  roscorebg
 }
 
 function rosbagfilter()
@@ -279,13 +274,13 @@ alias x-start='service lightdm restart'
 
 alias off='xset dpms force off'
 
-alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=Release -- --no-notify '
-alias cbuildnowarn='catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release -- --no-notify '
-alias cdebug='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=RelWithDebInfo -- --no-notify '
-#alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=Debug -- --no-notify '
+alias cbuild='catkin build -j 3 -p 3 --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=RelWithDebInfo -- '
+alias cbuildnowarn='catkin build -j 3 -p 3 --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -- '
+alias cdebug='catkin build -j 3 -p 3 --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=RelWithDebInfo -- '
+#alias cbuild='catkin build --cmake-args -DCMAKE_C_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_CXX_FLAGS="-Wall -W -Wno-unused-parameter -Werror" -DCMAKE_BUILD_TYPE=Debug -- '
 alias cclean='catkin clean --deinit -y '
-alias cinstall='catkin build --no-notify --catkin-make-args install -- '
-alias ctest='catkin run_tests --no-deps --this --no-notify '
+alias cinstall='catkin build --catkin-make-args install -- '
+alias ctest='catkin run_tests --no-deps --this '
 alias cconfig='catkin config --install --isolate-install --isolate-devel '
 
 # Current year calendar
@@ -375,6 +370,7 @@ alias cbwd="pwd | cb"
 
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"
+
 # Paste
 alias cbp="xclip -o -selection clipboard"
 
