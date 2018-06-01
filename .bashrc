@@ -180,4 +180,6 @@ export INTEL_LICENSE_FILE=$HOME/vtune.lic
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # Awesome fonts:
-[ -f ~/.fonts/*.sh ] && source ~/.fonts/*.sh
+for file in $(find $HOME/.fonts -maxdepth 1 -name "*.sh"); do
+    source $file
+done
