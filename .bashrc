@@ -161,6 +161,9 @@ fi
 if [ ! $(echo $added_keys | grep -o -e github) ]; then
    ssh-add "$HOME/.ssh/id_rsa_github"
 fi
+if [ ! $(echo $added_keys | grep -o -e robot) ]; then
+   ssh-add "$HOME/.ssh/id_rsa_robot"
+fi
 
 ulimit -c unlimited
 
