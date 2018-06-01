@@ -145,7 +145,7 @@ fi
 
 shopt -s autocd
 
-source /opt/ros/indigo/setup.bash
+source /etc/ros/setup.bash
 export ROBOT_SIMULATION=true
 export IS_GAZEBO=true
 export ROS_IP=127.0.0.1
