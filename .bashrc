@@ -92,9 +92,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 for file in ~/.bash_aliases*; do
-    if [ -f $file ]; then
-        source $file
-    fi
+    source $file
 done
 
 # enable programmable completion features (you don't need to enable
