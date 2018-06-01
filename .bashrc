@@ -93,7 +93,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 for file in $(ls ~/.bash_aliases*); do
     if [ -f $file ]; then
-        . $file
+        source $file
     fi
 done
 
