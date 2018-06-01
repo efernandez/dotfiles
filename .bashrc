@@ -169,3 +169,12 @@ ulimit -c unlimited
 
 export ROS_PACKAGE_PATH="$ROS_PACKAGE_PATH:$HOME/stacks"
 export PATH=/usr/lib/ccache:${PATH}
+
+# VTune:
+source /opt/intel/vtune_amplifier/amplxe-vars.sh >/dev/null
+export INTEL_LICENSE_FILE=$HOME/vtune.lic
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# Awesome fonts:
+source ~/.fonts/*.sh
