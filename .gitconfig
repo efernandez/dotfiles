@@ -24,7 +24,7 @@
 
 [user]
     name = Enrique Fernandez
-    email = efernandez@clearpathrobotics.com
+    email = efernandez@clearpath.ai
 
 [diff]
     tool = meld
