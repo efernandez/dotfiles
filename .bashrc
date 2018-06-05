@@ -183,3 +183,6 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 for file in $(find $HOME/.fonts -maxdepth 1 -name "*.sh"); do
     source $file
 done
+
+# Tensorflow
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/python2.7/dist-packages/tensorflow
