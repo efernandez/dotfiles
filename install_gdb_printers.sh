@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GDB_PRINTERS=~/.gbd_printers
+GDB_PRINTERS=~/.gdb_printers
 
 if [[ ! -d $GDB_PRINTERS ]];
 then
