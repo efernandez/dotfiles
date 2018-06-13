@@ -393,3 +393,6 @@ function virus()
 
   clamscan -r --bell -i $DIR
 }
+
+# Settings
+alias settings='unity-control-center'
