@@ -180,11 +180,11 @@ function roskill()
 {
   killall -q gazebo gzclient
 
-  psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill {}
-  psgrep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill -9 {}
+  ps aux | grep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill {}
+  ps aux | grep ros | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill -9 {}
 
-  psgrep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill {}
-  psgrep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill -9 {}
+  ps aux | grep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill {}
+  ps aux | grep rqt | grep -v 'vim\|sublime\|g++\|gcc\|c++\|rosmake\|catkin\|grep\|chrome' | awk '{print $2}' | xargs -I{} kill -9 {}
 }
 
 function rosbagfilter()
