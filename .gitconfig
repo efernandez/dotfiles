@@ -51,3 +51,10 @@
 
 [http]
     cookiefile = /home/efernandez/.gitcookies
+
+# Always use ssh for github, even if the remote URL uses https or git
+# Taken from: http://wiki.ros.org/bloom/Tutorials/GithubManualAuthorization
+[url "git@github.com:"]
+    insteadOf = git://github.com/
+[url "git@github.com:"]
+    insteadOf = https://github.com/
