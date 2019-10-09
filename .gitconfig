@@ -49,6 +49,10 @@
     process = git-lfs filter-process
     required = true
 
+[filter "clang_format"]
+    clean = clang-format-7 -assume-filename=%f
+    smudge = cat
+
 [http]
     cookiefile = /home/efernandez/.gitcookies
 
