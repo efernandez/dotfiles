@@ -394,5 +394,8 @@ function virus()
   clamscan -r --bell -i $DIR
 }
 
+# Quick downloads with aria2
+alias dl='aria2c -k 1M -s 16 -x 16 -c '
+
 # Settings
 alias settings='unity-control-center'
