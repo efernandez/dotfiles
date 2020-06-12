@@ -1,5 +1,8 @@
 
 alias rosmake='ROS_PARALLEL_JOBS=-j6 nice rosmake'
+alias rosplay='rosbag play --clock '
+alias resetfast='tput reset '
+alias plot='rosrun plotjuggler PlotJuggler -n '
 
 function guri()
 {
@@ -223,6 +226,7 @@ function v()
 alias vi='vim '
 
 alias ws='source devel/setup.bash'
+alias wsi='source install/setup.bash'
 
 # ls aliases
 alias ll='ls -rthal'
