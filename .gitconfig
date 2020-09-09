@@ -25,6 +25,7 @@
 [user]
     name = Enrique Fernandez
     email = efernandez@clearpath.ai
+    ;email = enrique.fernandez.perdomo@gmail.com
 
 [diff]
     tool = meld
