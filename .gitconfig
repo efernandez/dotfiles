@@ -54,6 +54,10 @@
     clean = clang-format-7 -assume-filename=%f
     smudge = cat
 
+[filter "clang_format10"]
+    clean = clang-format-10 -assume-filename=%f
+    smudge = cat
+
 [http]
     cookiefile = /home/efernandez/.gitcookies
 
