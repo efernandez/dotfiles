@@ -294,14 +294,15 @@ alias cal='cal -y'
 # see http://awesome.naquadah.org/wiki/Problems_with_Java
 function matlab()
 {
-  wmname LG3D
+  # It looks like we do not need wmname LG3D for Ubuntu 2.20 + Matlab R2020b
+  # wmname LG3D
   if [[ $# < 1 ]]
   then
-    MATLAB_VERSION=R2013a
+    MATLAB_VERSION=R2020b
   else
     MATLAB_VERSION=$1
   fi
-  /usr/local/MATLAB/$MATLAB_VERSION/bin/matlab -desktop
+  /usr/local/matlab/$MATLAB_VERSION/bin/matlab -desktop
 }
 
 # set operations between files
